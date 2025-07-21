@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{transform: .3s;}
+
+.fix{overflow: hidden}
+
+.container{
+    width: 1170px;
+    margin: auto;
+}
+
+.header-area{
+        border-top: 5px solid deepskyblue;
+        min-height: 120px;
+}
+
+.logo{
+        float: left;
+}
+
+.logo img {
+    height: 100px;
+    width: 100px;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+}
+
+.main-menu{
+        float:right;
+}
+.main-menu ul{
+
+}
+.main-menu ul li{
+        display: inline-block;
+        margin-left: 40px;
+        position: relative;
+}
+
+
+.main-menu ul li a{
+        color:#666666;
+        font size: 15px;
+        padding: 50px 0;
+        text-decoration: none;
+        display: block;
+}
+
+.main-menu ul li:hover a{
+        color: deepskyblue;
+}
+
+.main-menu ul li ul.sub-menu{
+        position:absolute;
+        top: 120%;
+        left: 0;
+        width:260px;
+        background: #171a21;
+        border-top: 5px solid deepskyblue;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+}
+
+.main-menu ul li:hover ul.sub-menu{
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+}
+
+.main-menu ul li ul.sub-menu li{
+        margin: 0;
+        display: block;
+        border-bottom: 2px solid #1e2128 ;
+}
+
+.main-menu ul li ul.sub-menu li a{
+        color: #fff;
+        padding: 15px 20px;
+        font-size: 13px;
+}
+
+.main-menu ul li ul.sub-menu li a:hover{
+        background: deepskyblue;
+}
+
+.single-slide{
+        text-align: center;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        padding: 175px 0;
+}
+
+.single-slide h4{
+        color: #fff;
+        font-size: 30px;
+        text-transform: uppercase;
+}
+
+.single-slide h2{
+        color: #fff;
+        font-size: 72px;
+        font-weight: 800;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+}
+
+.single-slide a{
+        background: #4272d7;
+        color: #fff;
+        padding: 20px 40px;
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-block;
+
+}
+
+.slider-area{
+        overflow: hidden;
+        width: 100%;
+}
+
+
+
