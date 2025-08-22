@@ -1,71 +1,173 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Smart Medication & Health Reminder</title>
-        <link rel="stylesheet" type="text/css" href="Smart Medication and Health reminder.css">
-        <link rel="stylesheet" type="text/css" href="owl.carousel.min.css">
-    </head>
-
-    <body>
-        <header>
-
-            <div class="header-area">
-                <div class="container">
-                    <div class="logo">
-                        <a href="Smart Medication and Health Reminder.html"><img src="dims-logo-white.png" alt="" /></a>
-                    
-            </div>
-
-            <div class="main-menu">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    
-                    
-                    <li><a href="#">Profile</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">Account Management</a></li>
-                            <li><a href="#">Settings</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Sign Up</a></li>
-                    <li><a href="#">Log-In</a></li>                   
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-        </header>
-
-        <div class="slider-area">
-            <div class="slider-active owl-carousel">
-                <div class="single-slide fix" style="background-image: url(supplements-tablets.jpg.webp)">
-                    <h4>Stay Safe</h4>
-                    <h2>Take Medicine</h2>
-                    <a href="#">Get Started</a>
-                </div>
-                <div class="single-slide fix" style="background-image: url(pills-dark.jpg.avif)">
-                    <h4>Stay Safe</h4>
-                    <h2>Take Medicine</h2>
-                    <a href="#">Get Started</a>
-                </div>
-                <div class="single-slide fix" style="background-image: url(360_F_432001656_.jpg)">
-                    <h4>Stay Safe</h4>
-                    <h2>Take Medicine</h2>
-                    <a href="#">Get Started</a>
-                </div>
-            </div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Medication & Health Reminder — Home</title>
+    <link rel="stylesheet" href="Smart Medication and Health reminder.css" />
+    <link rel="stylesheet" href="owl.carousel.min.css" />
+    <style>
+      /* --- Page-specific helpers atop your existing CSS --- */
+      .page-container { width: 1170px; margin: 40px auto; }
+      .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; }
+      .card {
+        background: #fff; border: 1px solid #eaeaea; border-radius: 8px;
+        padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      }
+      .card h3 { margin-bottom: 12px; color: #333; }
+      form label { display:block; font-weight:600; margin: 10px 0 6px; }
+      form input, form select, form textarea {
+        width: 100%; padding: 10px; border: 1px solid #dcdcdc; border-radius: 6px;
+      }
+      form .row { display:flex; gap: 12px; }
+      form .row > div { flex: 1; }
+      .btn {
+        display:inline-block; background:#4272d7; color:#fff; border:none;
+        padding:10px 16px; font-weight:700; border-radius:6px; cursor:pointer; text-decoration:none;
+      }
+      .btn:disabled { opacity: 0.7; cursor:not-allowed; }
+      .muted { color:#666; }
+      .pill {
+        display:inline-block; padding:4px 10px; border-radius:999px; background:#f3f7ff; border:1px solid #dfe7ff; margin-left:8px; font-size:12px;
+      }
+      /* Reminders list */
+      .reminders { display:flex; flex-direction:column; gap:12px; }
+      .reminder {
+        border:1px solid #e9e9e9; border-radius:8px; padding:12px; display:flex; align-items:center; justify-content:space-between;
+      }
+      .reminder .meta { display:flex; align-items:center; gap:12px; }
+      .reminder .name { font-weight:700; }
+      .reminder .actions { display:flex; gap:8px; }
+      .reminder .toggle { cursor:pointer; }
+      .tag { font-size:12px; padding:4px 8px; background:#eef9f0; border:1px solid #d2f0d7; border-radius:999px; }
+      .danger { background:#fff4f4; border-color:#ffd6d6; }
+      .empty { text-align:center; padding:24px; color:#666; }
+      /* Slider headline contrast on hero images */
+      .single-slide h4, .single-slide h2 { text-shadow: 0 2px 10px rgba(0,0,0,.35); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-area">
+        <div class="container">
+          <div class="logo">
+            <a href="index.html"><img src="dims-logo-white.png" alt="Logo" /></a>
+          </div>
+          <div class="main-menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li data-auth="logged-in"><a href="profile.html">Profile</a></li>
+              <li data-auth="logged-out"><a href="signup.html">Sign Up</a></li>
+              <li data-auth="logged-out"><a href="login.html">Log-In</a></li>
+              <li data-auth="logged-in"><a href="#" id="logoutLink">Log Out</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </header>
 
-        <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
-        <script type="text/javascript" src="owl.carousel.min.js"></script>
-        <script type="text/javascript" src="active.js"></script>
+    <!-- Keep your original hero/slider -->
+    <div class="slider-area">
+      <div class="slider-active owl-carousel">
+        <div class="single-slide fix" style="background-image:url('supplements-tablets.jpg.webp')">
+          <h4>Stay Safe</h4>
+          <h2>Take Medicine</h2>
+          <a href="#dashboard">Get Started</a>
+        </div>
+        <div class="single-slide fix" style="background-image:url('pills-dark.jpg.avif')">
+          <h4>Stay Safe</h4>
+          <h2>Take Medicine</h2>
+          <a href="#dashboard">Get Started</a>
+        </div>
+        <div class="single-slide fix" style="background-image:url('360_F_432001656_.jpg')">
+          <h4>Stay Safe</h4>
+          <h2>Take Medicine</h2>
+          <a href="#dashboard">Get Started</a>
+        </div>
+      </div>
+    </div>
 
-    </body>
+    <main id="dashboard" class="page-container">
+      <div class="grid">
+        <section class="card" aria-labelledby="greeting">
+          <h3 id="greeting">Welcome back 👋</h3>
+          <p class="muted">Take control of your meds with gentle reminders and quick tips.</p>
+
+          <div class="card" style="margin-top:16px;">
+            <h3>Today's Medication Tips <span class="pill" id="tipAudience"></span></h3>
+            <p id="tipText" style="margin:8px 0 12px;"></p>
+            <button class="btn" id="nextTipBtn" type="button">Another tip</button>
+          </div>
+
+          <div class="card" style="margin-top:16px;">
+            <h3>Add a Reminder</h3>
+            <form id="addReminderForm" autocomplete="off">
+              <div class="row">
+                <div>
+                  <label for="medName">Medicine name</label>
+                  <input id="medName" name="medName" required placeholder="e.g., Metformin" />
+                </div>
+                <div>
+                  <label for="dosage">Dosage</label>
+                  <input id="dosage" name="dosage" placeholder="e.g., 500 mg" />
+                </div>
+              </div>
+              <div class="row">
+                <div>
+                  <label for="time">Time</label>
+                  <input id="time" name="time" type="time" required />
+                </div>
+                <div>
+                  <label for="repeat">Repeat</label>
+                  <select id="repeat" name="repeat">
+                    <option value="daily" selected>Daily</option>
+                    <option value="weekdays">Weekdays</option>
+                    <option value="custom">Custom days</option>
+                  </select>
+                </div>
+              </div>
+              <div id="customDays" style="display:none; margin-top:8px;">
+                <label>Days</label>
+                <div class="row">
+                  <div><label><input type="checkbox" value="Mon" /> Mon</label></div>
+                  <div><label><input type="checkbox" value="Tue" /> Tue</label></div>
+                  <div><label><input type="checkbox" value="Wed" /> Wed</label></div>
+                  <div><label><input type="checkbox" value="Thu" /> Thu</label></div>
+                  <div><label><input type="checkbox" value="Fri" /> Fri</label></div>
+                  <div><label><input type="checkbox" value="Sat" /> Sat</label></div>
+                  <div><label><input type="checkbox" value="Sun" /> Sun</label></div>
+                </div>
+              </div>
+              <label for="notes" style="margin-top:10px;">Notes (optional)</label>
+              <textarea id="notes" name="notes" rows="2" placeholder="Before meal, take with water…"></textarea>
+              <div style="margin-top:12px;">
+                <button class="btn" type="submit">Add reminder</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <aside class="card">
+          <h3>Your Reminders</h3>
+          <div id="remindersList" class="reminders"></div>
+          <div id="emptyState" class="empty" style="display:none;">
+            No reminders yet. Add your first one on the left!
+          </div>
+        </aside>
+      </div>
+    </main>
 
     <footer>
-        <div class="footer-area">
-            <div class="container">
-                <p>&copy; 2025 Smart Medication & Health Reminder. All rights reserved.</p>
-            </div>
+      <div class="footer-area">
+        <div class="container">
+          <p>&copy; 2025 Smart Medication &amp; Health Reminder. All rights reserved.</p>
         </div>
+      </div>
     </footer>
 
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="owl.carousel.min.js"></script>
+    <script src="active.js"></script>
+  </body>
 </html>
