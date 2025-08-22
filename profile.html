@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile — Smart Medication & Health Reminder</title>
+    <link rel="stylesheet" href="Smart Medication and Health reminder.css" />
+    <style>
+
+        body {
+        background: url("Login and Sign Up.jpg") no-repeat center center fixed;
+        background-size: cover;
+        }
+        
+      .page-container { width: 800px; margin: 40px auto; }
+      .card {
+        background: #fff; border: 1px solid #eaeaea; border-radius: 8px;
+        padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      }
+      .card h2 { margin-bottom: 8px; }
+      label { display:block; font-weight:600; margin: 10px 0 6px; }
+      input, select, textarea { width:100%; padding:10px; border:1px solid #dcdcdc; border-radius:6px; }
+      .row { display:flex; gap:12px; }
+      .row > div { flex:1; }
+      .btn { display:inline-block; background:#4272d7; color:#fff; border:none;
+        padding:10px 16px; font-weight:700; border-radius:6px; cursor:pointer; text-decoration:none; }
+      .muted { color:#666; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-area">
+        <div class="container">
+          <div class="logo">
+            <a href="index.html"><img src="dims-logo-white.png" alt="Logo" /></a>
+          </div>
+          <div class="main-menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li data-auth="logged-in"><a href="profile.html">Profile</a></li>
+              <li data-auth="logged-out"><a href="signup.html">Sign Up</a></li>
+              <li data-auth="logged-out"><a href="login.html">Log-In</a></li>
+              <li data-auth="logged-in"><a href="#" id="logoutLink">Log Out</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-container">
+      <div class="card">
+        <h2>Your profile</h2>
+        <p class="muted">Update your details to personalise tips and reminders.</p>
+        <form id="profileForm" autocomplete="off">
+          <div class="row">
+            <div>
+              <label for="name">Full name</label>
+              <input id="name" name="name" required />
+            </div>
+            <div>
+              <label for="age">Age</label>
+              <input id="age" name="age" type="number" min="1" />
+            </div>
+          </div>
+          <label for="email">Email (cannot change)</label>
+          <input id="email" name="email" type="email" disabled />
+          <label for="role">I am</label>
+          <select id="role" name="role">
+            <option value="student">Student</option>
+            <option value="elderly">Elderly</option>
+            <option value="other">Other</option>
+          </select>
+          <label for="notes">Health notes</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Allergies, conditions, preferred pharmacy…"></textarea>
+          <div style="margin-top:12px;">
+            <button class="btn" type="submit">Save changes</button>
+            <a class="btn" href="index.html" style="background:#1aa35f;">Back to Home</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="card" style="margin-top:16px;">
+        <h3>Change password</h3>
+        <form id="passwordForm" autocomplete="off">
+          <label for="currentPassword">Current password</label>
+          <input id="currentPassword" name="currentPassword" type="password" required />
+          <label for="newPassword">New password</label>
+          <input id="newPassword" name="newPassword" type="password" minlength="6" required />
+          <div style="margin-top:12px;">
+            <button class="btn" type="submit">Update password</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-area">
+        <div class="container">
+          <p>&copy; 2025 Smart Medication &amp; Health Reminder. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="active.js"></script>
+  </body>
+</html>

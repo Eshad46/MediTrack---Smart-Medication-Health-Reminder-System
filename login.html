@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log In — Smart Medication & Health Reminder</title>
+    <link rel="stylesheet" href="Smart Medication and Health reminder.css" />
+    <style>
+
+        body {
+        background: url("Login and Sign Up.jpg") no-repeat center center fixed;
+        background-size: cover;
+        }
+    
+      .auth-shell { width: 420px; margin: 80px auto; }
+      .card {
+        background:#fff; border:1px solid #eaeaea; border-radius:8px;
+        padding:24px; box-shadow:0 2px 8px rgba(0,0,0,.04);
+      }
+      .card h2 { margin-bottom:8px; }
+      label { display:block; font-weight:600; margin: 10px 0 6px; }
+      input { width:100%; padding:10px; border:1px solid #dcdcdc; border-radius:6px; }
+      .btn { display:inline-block; background:#4272d7; color:#fff; border:none;
+        padding:10px 16px; font-weight:700; border-radius:6px; cursor:pointer; text-decoration:none; }
+      .muted { color:#666; }
+      .row-between { display:flex; justify-content:space-between; align-items:center; margin-top:12px; }
+    </style>
+  </head>
+  <body>
+    <div class="auth-shell">
+      <div class="card">
+        <h2>Welcome back</h2>
+        <p class="muted">Log in to continue to your dashboard.</p>
+        <form id="loginForm" autocomplete="off">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" required placeholder="••••••••" />
+          <div class="row-between">
+            <button class="btn" type="submit">Log In</button>
+            <a class="muted" href="signup.html">Create an account</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="active.js"></script>
+  </body>
+</html>

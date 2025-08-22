@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign Up — Smart Medication & Health Reminder</title>
+    <link rel="stylesheet" href="Smart Medication and Health reminder.css" />
+    <style>
+
+        body {
+        background: url("Login and Sign Up.jpg") no-repeat center center fixed;
+        background-size: cover;
+        }
+        
+      .auth-shell { width: 520px; margin: 60px auto; }
+      .card {
+        background:#fff; border:1px solid #eaeaea; border-radius:8px;
+        padding:24px; box-shadow:0 2px 8px rgba(0,0,0,.04);
+      }
+      .card h2 { margin-bottom:8px; }
+      label { display:block; font-weight:600; margin: 10px 0 6px; }
+      input, select { width:100%; padding:10px; border:1px solid #dcdcdc; border-radius:6px; }
+      .row { display:flex; gap:12px; }
+      .row > div { flex:1; }
+      .btn { display:inline-block; background:#4272d7; color:#fff; border:none;
+        padding:10px 16px; font-weight:700; border-radius:6px; cursor:pointer; text-decoration:none; }
+      .muted { color:#666; }
+      .row-between { display:flex; justify-content:space-between; align-items:center; margin-top:12px; }
+    </style>
+  </head>
+  <body>
+    <div class="auth-shell">
+      <div class="card">
+        <h2>Create your account</h2>
+        <p class="muted">Sign up to start getting medication reminders.</p>
+        <form id="signupForm" autocomplete="off">
+          <div class="row">
+            <div>
+              <label for="name">Full name</label>
+              <input id="name" name="name" required placeholder="e.g., Ayesha Rahman" />
+            </div>
+            <div>
+              <label for="age">Age</label>
+              <input id="age" name="age" type="number" min="1" placeholder="e.g., 20" />
+            </div>
+          </div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" minlength="6" required placeholder="At least 6 characters" />
+          <label for="role">I am signing up as</label>
+          <select id="role" name="role">
+            <option value="student">Student</option>
+            <option value="elderly">Elderly</option>
+            <option value="other">Other</option>
+          </select>
+          <div class="row-between">
+            <button class="btn" type="submit">Create Account</button>
+            <a class="muted" href="login.html">Already have an account?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="active.js"></script>
+  </body>
+</html>
